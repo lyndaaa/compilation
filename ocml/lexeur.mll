@@ -6,11 +6,12 @@ exception TokenInconu
 }
 rule token = parse
 [' ' '\t'] { token lexbuf }
-| [';' '\n'] { PT_VIRG  }
+| [';' '\n'] { EOL  }
 | ['0'-'9']+ { NOMBRE }
 | '+' { PLUS }
 | '-' { MOINS }
 | '*' { FOIS }
+| '/' { DIVISION }
 | '(' { GPAREN }
 | ')' { DPAREN }
 | eof { raise Eof }
